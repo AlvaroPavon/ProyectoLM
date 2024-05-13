@@ -340,6 +340,7 @@ function siguienteNivel() {
 
     nivelActual++; // Incrementamos al siguiente nivel
 
+    
     velNiv = modos["niveles"][nivelActual]["velocidad"];
 
     /* Reiniciar el juego */
