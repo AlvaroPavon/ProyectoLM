@@ -173,7 +173,7 @@ function moverInvasores() {
         siguiente.classList.remove("siguiente_oculto");
 
         //Comprobamos si hemos pasado de nivel y si es asi ocultanmos el boton de siguiente nivel
-        if (nivelActualBoton === 1) {
+        if (nivelActualBoton === 20) {
             siguiente.classList.add("siguiente_oculto");
         }
         puntuacionActual = resultado;
@@ -341,7 +341,7 @@ function siguienteNivel() {
     imagenWinner.classList.add('oculto');
 
     // Si alcanzas el segundo nivel, oculta el botón de siguiente nivel
-    if (nivelActual === 2) {
+    if (nivelActual === 20) {
         siguiente.classList.add('siguiente_oculto');
     }
 
