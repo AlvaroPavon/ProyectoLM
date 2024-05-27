@@ -81,6 +81,7 @@ function dibujar() {
     }
 }
 
+
 /* Llamar a la funcion para dibujar los invasores */
 dibujar();
 
@@ -406,5 +407,23 @@ function reiniciarJuego() {
             return true;
         }
     }
+ //recolectar loa datos del jugador
+ const nombreJugador= document.getElementById("nombre").value;
+    const jugador = {
+        nombre: nombreJugador,
+        puntuacion: resultado,
+        nivel: nivelActualBoton
+    };
+
+    // Enviar los datos del jugador al servidor usando AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "guardar_puntuacion.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log("Datos del jugador guardados exitosamente.");
+        }
+    };
+    xhr.send(JSON.stringify(jugador));
 }
 siguiente.addEventListener('click', siguienteNivel);
